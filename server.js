@@ -6,11 +6,11 @@ const app = express()
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.get('/', (req, res)=>{
-    res.send('Welcome, this is my Home page')
+app.get('/api', (req, res)=>{
+    res.send('Welcome, this is my API page')
 })
 
-app.get('/contactus/', (req, res)=>{
+app.get('/contactUs/', (req, res)=>{
     res.sendFile(path.join(__dirname, 'public', 'contactUs.html'))
 })
 
