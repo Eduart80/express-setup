@@ -7,7 +7,7 @@ const app = express()
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/api', (req, res)=>{
-    res.send('Welcome, this is my API page')
+    res.send('Welcome, this is my API message')
 })
 
 app.get('/contactUs/', (req, res)=>{
