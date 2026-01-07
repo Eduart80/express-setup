@@ -1,13 +1,19 @@
 const express = require('express')
+const path = require('path')
 const PORT = 3004
 
 const app = express()
 
+app.use(express.static(path.join(__dirname, 'public')));
+
 app.get('/', (req, res)=>{
-    res.send('Hi')
+    res.send('Welcome, this is my Home page')
+})
+
+app.get('/contactus/', (req, res)=>{
+    res.sendFile(path.join(__dirname, 'public', 'contactUs.html'))
 })
 
 app.listen(PORT, ()=>{
-    console.log(`Port opend on ${PORT}`);
-    
+    console.log(`Server is running on port ${PORT}`)
 })
